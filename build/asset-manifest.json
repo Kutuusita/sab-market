@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.60601e7a.chunk.css",
-    "main.js": "/static/js/main.c26ecfe3.chunk.js",
-    "main.js.map": "/static/js/main.c26ecfe3.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.656dae54.js",
-    "runtime-main.js.map": "/static/js/runtime-main.656dae54.js.map",
-    "static/js/2.7f4b5583.chunk.js": "/static/js/2.7f4b5583.chunk.js",
-    "static/js/2.7f4b5583.chunk.js.map": "/static/js/2.7f4b5583.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.60601e7a.chunk.css.map": "/static/css/main.60601e7a.chunk.css.map",
-    "static/js/2.7f4b5583.chunk.js.LICENSE.txt": "/static/js/2.7f4b5583.chunk.js.LICENSE.txt",
-    "static/media/app.scss": "/static/media/PTSans-Regular.ac2960c5.woff2",
-    "static/media/main-category-icon--po.12efb737.svg": "/static/media/main-category-icon--po.12efb737.svg",
-    "static/media/main-category-icon--pos.01b79082.svg": "/static/media/main-category-icon--pos.01b79082.svg",
-    "static/media/main-category-icon--services.a8c18364.svg": "/static/media/main-category-icon--services.a8c18364.svg"
+    "main.css": "/sab-market/static/css/main.abf95405.chunk.css",
+    "main.js": "/sab-market/static/js/main.c26ecfe3.chunk.js",
+    "main.js.map": "/sab-market/static/js/main.c26ecfe3.chunk.js.map",
+    "runtime-main.js": "/sab-market/static/js/runtime-main.85557e07.js",
+    "runtime-main.js.map": "/sab-market/static/js/runtime-main.85557e07.js.map",
+    "static/js/2.7f4b5583.chunk.js": "/sab-market/static/js/2.7f4b5583.chunk.js",
+    "static/js/2.7f4b5583.chunk.js.map": "/sab-market/static/js/2.7f4b5583.chunk.js.map",
+    "index.html": "/sab-market/index.html",
+    "static/css/main.abf95405.chunk.css.map": "/sab-market/static/css/main.abf95405.chunk.css.map",
+    "static/js/2.7f4b5583.chunk.js.LICENSE.txt": "/sab-market/static/js/2.7f4b5583.chunk.js.LICENSE.txt",
+    "static/media/app.scss": "/sab-market/static/media/PTSans-Regular.ac2960c5.woff2",
+    "static/media/main-category-icon--po.12efb737.svg": "/sab-market/static/media/main-category-icon--po.12efb737.svg",
+    "static/media/main-category-icon--pos.01b79082.svg": "/sab-market/static/media/main-category-icon--pos.01b79082.svg",
+    "static/media/main-category-icon--services.a8c18364.svg": "/sab-market/static/media/main-category-icon--services.a8c18364.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.656dae54.js",
+    "static/js/runtime-main.85557e07.js",
     "static/js/2.7f4b5583.chunk.js",
-    "static/css/main.60601e7a.chunk.css",
+    "static/css/main.abf95405.chunk.css",
     "static/js/main.c26ecfe3.chunk.js"
   ]
 }
