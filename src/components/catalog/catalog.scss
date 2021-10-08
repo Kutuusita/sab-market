@@ -1,0 +1,48 @@
+.main-categoties {
+  margin-top: 50px;
+}
+
+.main-categories-card {
+  width: 413px;
+  height: 120px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  border: none;
+  background-color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  // transition: color .2s ease-in-out;
+  cursor: pointer;
+
+  &.active,
+  &:hover {
+    color: #ffffff;
+    background: radial-gradient(55.7% 96.02% at 8.01% -0.01%, #FFBA62 0%, #F78D63 100%);
+  }
+
+}
+
+svg {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+  use {
+    fill: #666666;
+    // transition: fill .2s ease-in-out;
+  }
+  .main-categories-card:hover & use,
+  .active & use {
+    fill: #ffffff
+  }
+}
+
+.category-card-list {
+  margin: 0 -15px;
+
+  .category-card {
+    margin: 0 15px 30px;
+  }
+}

@@ -1,0 +1,101 @@
+// @import-normalize;
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy/Gilroy-Regular.woff2");
+  src: local("Gilroy Regular"), local("Gilroy-Regular"),
+    url("fonts/Gilroy/Gilroy-Regular.woff2") format("woff2"),
+    url("fonts/Gilroy/Gilroy-Regular.woff") format("woff"),
+    url("fonts/Gilroy/Gilroy-Regular.ttf") format("truetype"),
+    url("fonts/Gilroy/Gilroy-Regular.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy/Gilroy-Extrabold.woff2");
+  src: local("Gilroy Extrabold"), local("Gilroy-Extrabold"),
+    url("fonts/Gilroy/Gilroy-Extrabold.woff2") format("woff2"),
+    url("fonts/Gilroy/Gilroy-Extrabold.woff") format("woff"),
+    url("fonts/Gilroy/Gilroy-Extrabold.ttf") format("truetype"),
+    url("fonts/Gilroy/Gilroy-Extrabold.eot?#iefix") format("embedded-opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PTSans";
+  src: url("fonts/PTSans/PTSans-Regular.woff2");
+  src: local("PT Sans Regular"), local("PTSans-Regular"),
+    url("fonts/PTSans/PTSans-Regular.woff2") format("woff2"),
+    url("fonts/PTSans/PTSans-Regular.woff") format("woff"),
+    url("fonts/PTSans/PTSans-Regular.ttf") format("truetype"),
+    url("fonts/PTSans/PTSans-Regular.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PTSans";
+  src: url("fonts/PTSans/PTSans-Bold.woff2");
+  src: local("PT Sans Bold"), local("PTSans-Bold"),
+    url("fonts/PTSans/PTSans-Bold.woff2") format("woff2"),
+    url("fonts/PTSans/PTSans-Bold.woff") format("woff"),
+    url("fonts/PTSans/PTSans-Bold.ttf") format("truetype"),
+    url("fonts/PTSans/PTSans-Bold.eot?#iefix") format("embedded-opentype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "PTSans", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title {
+  font-family: "Gilroy", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.page-content {
+  max-width: 1330px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+
+.section-title {
+  margin: 50px 0 30px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.d-flex {
+  display: flex;
+}
+
+
+.justify-content-sb {
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
