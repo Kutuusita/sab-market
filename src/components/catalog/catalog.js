@@ -3,10 +3,15 @@ import svgPos from '../../img/main-category-icon--pos.svg';
 import svgPo from '../../img/main-category-icon--po.svg';
 import svgServices from '../../img/main-category-icon--services.svg';
 
+// import Service from '../../services/service';
 
 import CategoryCard from '../category-card';
 
 const Catalog = () => {
+
+  // const reqService = new Service();
+  // const result = reqService.getResourse();
+  // console.log(result);
 
   const service = {
     1:{

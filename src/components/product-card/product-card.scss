@@ -1,0 +1,67 @@
+.product-card {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 40px 30px;
+    position: relative;
+
+    &__image {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &__name {
+        font-weight: bold;
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    &__price {
+        &--base {
+            font-size: 35px;
+            font-weight: bold;
+            font-family: "Gilroy", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        }
+
+        &--sale {
+            width: max-content;
+            &:before {
+                content: '';
+                border: 1px solid #C4C4C4;
+                width: 60%;
+                display: block;
+                border-radius: 3px;
+                margin-bottom: 5px;
+            }
+
+            .price {
+                font-size: 20px;
+                color: #FF731D;
+                font-weight: bold;
+            }
+
+        }
+    }
+}
+
+.add-to-cart {
+    position: absolute;
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    right: 20px;
+    top: 230px;
+    background-color: #EAEAEA;
+    background-image: url('../../img/cart-icon.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;
+    font-size: 0;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #51AF63;
+        background-image: url('../../img/cart-icon-added.svg');
+    }
+}
