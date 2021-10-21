@@ -1,28 +1,18 @@
 import './category-card.scss';
 
 const CategoryCard = (props) => {
-  // const service = {
-  //   {
-  //     id: 1,
-  //     image_url: '',
-  //     title: 'Онлайн-касса РНКБ',
-  //   },
-  //   {
-  //     id: 2,
-  //     image_url: '',
-  //     title: 'Онлайн-касса РНКБ',
-  //   }
-  // };
-  const { data } = props;
-
+  const { data, onItemSelected } = props;
+  const { virtuemart_category_id: catId, file_url, category_name } = data;
 
   return (
-    <div className="category-card" id="someId">
+    <div
+    onClick={ () => onItemSelected(catId) }
+    className="category-card" id={catId}>
       <div className="category-card__image">
-        <img src={data.image_url} alt={data.title} />
+        <img src={`https://market.sab-it.ru/${file_url}`} alt={category_name} />
       </div>
       <div className="category-card__name">
-        {data.title}
+        {category_name}
       </div>
     </div>
   )

@@ -5,6 +5,8 @@
     overflow: hidden;
     padding: 40px 30px;
     position: relative;
+    min-height: 543px;
+    cursor: pointer;
 
     &__image {
         text-align: center;
@@ -53,7 +55,7 @@
     right: 20px;
     top: 230px;
     background-color: #EAEAEA;
-    background-image: url('../../img/cart-icon.svg');
+    background-image: url('./cart-icon.svg');
     background-position: center center;
     background-repeat: no-repeat;
     border: none;
@@ -62,6 +64,6 @@
 
     &:hover {
         background-color: #51AF63;
-        background-image: url('../../img/cart-icon-added.svg');
+        background-image: url('./cart-icon-added.svg');
     }
 }

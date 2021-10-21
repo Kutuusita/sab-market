@@ -1,24 +1,27 @@
 import './product-card.scss';
 
+
+import productImg from './product-card.jpg';
+
 const ProductCard = (props) => {
     const { data } = props;
     return (
         <div className="product-card">
             <div className="product-card__image">
-                <img src={data.image_url} alt={data.title} />
+                <img src={data.image_url ? data.image_url : productImg} alt={data.product_name} />
             </div>
             <div className="product-card__name">
-                {data.title}
+                {data.product_name}
             </div>
 
             <button className="add-to-cart">Добавить в корзину</button>
-            
+
             <div className="product-card__price">
                 <div className="product-card__price--base">
-                    {data.price_base} ₽
+                    {data.product_price} ₽
                 </div>
                 <div className="product-card__price--sale">
-                    <span className="price">{data.price_sale} ₽ </span><span>с подпиской САБ.Плюс</span>
+                    <span className="price">{data.product_price} ₽ </span><span>с подпиской САБ.Плюс</span>
                 </div>
             </div>
         </div>

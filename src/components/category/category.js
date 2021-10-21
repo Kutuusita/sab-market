@@ -1,60 +1,77 @@
-import './category.scss';
-import productImg from '../../img/product-card.jpg';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
+import compose from '../../utils';
+import withStoreService from '../hoc/with-store-service';
+import { fetchProducts } from '../../actions';
+
+import Service from '../../services/service';
 import ProductCard from '../product-card';
 
-const Category = () => {
+import './category.scss';
 
-    const service = {
-        1:{
-          id: 1,
-          image_url: productImg,
-          title: 'Смарт-терминал Эвотор 5',
-          price_base: '15 500',
-          price_sale: '15 000',
-        },
-        2:{
-          id: 2,
-          image_url: productImg,
-          title: 'Смарт-терминал Эвотор 7.2',
-          price_base: '18 500',
-          price_sale: '18 000',
-        },
-        3:{
-          id: 3,
-          image_url: productImg,
-          title: 'Смарт-терминал Эвотор 7.3',
-          price_base: '21 500',
-          price_sale: '21 000',
-        },
-        4:{
-          id: 4,
-          image_url: productImg,
-          title: 'Смарт-терминал Эвотор 10',
-          price_base: '24 700',
-          price_sale: '24 300',
-        },
+class Category extends Component {
+
+  state = {
+    data: [],
+    cat: {},
+  }
+
+  service = new Service();
+
+  componentDidMount() {
+    if (this.props.categoryId !== this.props.itemId) {
+      this.props.fetchProducts(this.props.itemId);
+    };
+  }
+
+  render() {
+
+    const filterProducts = (item = {}, cat_id = '0') => {
+      if (!item && !item.length) return false;
+      return item.virtuemart_category_id === cat_id ? item : false;
     }
 
-    const productCards = Object.values(service).map(item => {
-        return (
-            <ProductCard data={ item } key={ item.id } />
+    const { categories, products, loading, error, itemId  } = this.props;
+    const productCardsReq = products.map(item => {
+      return (
+        <ProductCard data={ item } key={ item.virtuemart_product_id } />
         )
     });
-    
-    return (
-        <div className="category">
-            <div className="breadcrumbs">
-              <a href="#" className="back-link">Назад</a>
-              <a href="#" className="breadcrumbs__link">Онлайн-кассы Эвотор</a>
-            </div>
 
-            <div className="section-title">Смарт-терминал Эвотор</div>
-            <div className="products-list d-flex flex-wrap">
-                { productCards }
-            </div>
-        </div>
-    );
+    const { category_name } = categories.find(item => filterProducts(item, itemId));
+
+    return (
+      <div className="category">
+          <div className="breadcrumbs">
+            <Link to="/" className="back-link">Назад</Link>
+            <div className="breadcrumbs__link">{ category_name }</div>
+          </div>
+
+          <div className="section-title">{ category_name }</div>
+          <div className="products-list d-flex flex-wrap">
+              { productCardsReq }
+          </div>
+      </div>
+    )
+  }
 }
 
-export default Category;
+const mapStateToProps = ({productList: {products, categoryId, loading, error}, categoryList: {categories}}) => {
+  return { categories, products, categoryId, loading, error }
+}
+
+const mapDispatchToProps = (dispatch, { storeService }) => {
+  return bindActionCreators({
+    fetchProducts: fetchProducts(storeService),
+  }, dispatch)
+}
+
+export default compose(
+  withRouter,
+  withStoreService(),
+  connect(mapStateToProps,mapDispatchToProps)
+)(Category);
