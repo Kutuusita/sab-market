@@ -1,6 +1,7 @@
 export default class Service {
   _apiBase = 'https://market.sab-it.ru/market/market_object_2.php';
-  headers = {'Origin': 'http://localhost:3000/'};
+  // headers = {'Origin': 'http://localhost:3000/'};
+  headers = {'Origin': 'https://kutuusita.github.io/'};
 
   getResourse = async (type, id) => {
     const url = id ? `${this._apiBase}?type=${type}&id=${id}`:`${this._apiBase}?type=${type}`;
