@@ -1,3 +1,7 @@
+const updateCartTotal = (cartItems) => {
+
+  return cartItems.reduce((acc, item) => acc + item.total, 0)
+}
 const updateCartItems = (cartItems, item, idx) => {
 
   if (item.count === 0) {
@@ -24,9 +28,9 @@ const updateCartItems = (cartItems, item, idx) => {
 const updateCartItem = (product, item = {}, quantity) => {
 
   const {
-    id = product.id,
+    id = product.virtuemart_product_id,
     count = 0,
-    title = product.title,
+    title = product.product_name,
     total = 0
   } = item;
 
@@ -34,13 +38,13 @@ const updateCartItem = (product, item = {}, quantity) => {
     id,
     title,
     count: count + quantity,
-    total: total + quantity * product.price,
+    total: total + quantity * product.product_price_f,
   }
 }
 
 const updateOrder = (state, productId, quantity) => {
   const { productList: { products }, shoppingCart: { cartItems } } = state;
-  const product = products.find(({id}) => id === productId);
+  const product = products.find(({virtuemart_product_id}) => virtuemart_product_id === productId);
   const itemIndex = cartItems.findIndex(({id}) => id === productId);
   const item = cartItems[itemIndex];
 
@@ -48,7 +52,7 @@ const updateOrder = (state, productId, quantity) => {
 
   return {
     cartItems: updateCartItems(cartItems, newItem, itemIndex),
-    orderTotal: 0,
+    orderTotal: updateCartTotal(updateCartItems(cartItems, newItem, itemIndex)),
   };
 }
 
@@ -69,6 +73,12 @@ const updateShoppingCart = (state, action) => {
     case 'ALL_PRODUCTS_REMOVED_FROM_CART':
       const item = state.shoppingCart.cartItems.find(({id}) => id === action.payload);
       return updateOrder(state, action.payload, -item.count)
+
+    case 'CLEAN_CART':
+      return {
+        cartItems: [],
+        orderTotal: 0,
+      }
 
     default:
       return state.shoppingCart;

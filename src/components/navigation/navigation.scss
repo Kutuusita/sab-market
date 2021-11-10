@@ -1,5 +1,5 @@
-.main-categoties {
-  margin-top: 50px;
+.main-categories {
+  padding-top: 50px;
 }
 
 .main-categories-card {
@@ -16,6 +16,8 @@
   padding: 30px;
   // transition: color .2s ease-in-out;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 
   &.active,
   &:hover {

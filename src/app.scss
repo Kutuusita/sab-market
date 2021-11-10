@@ -1,4 +1,4 @@
-// @import-normalize;
+@import-normalize;
 
 @font-face {
   font-family: "Gilroy";
@@ -64,6 +64,12 @@ body {
   font-size: 18px;
   min-height: 100vh;
 }
+textarea,
+select,
+input,
+button {
+  font-family: inherit;
+}
 
 h1,
 h2,
@@ -71,11 +77,20 @@ h3,
 h4,
 h5,
 h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
 .section-title {
   font-family: "Gilroy", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
 }
-
 .page-content {
+  min-height: calc(100vh - 166px);
+}
+.container {
   max-width: 1330px;
   margin: auto;
   padding: 0 15px;

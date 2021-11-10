@@ -8,19 +8,11 @@ import compose from '../../utils';
 import withStoreService from '../hoc/with-store-service';
 import { fetchProducts } from '../../actions';
 
-import Service from '../../services/service';
 import ProductCard from '../product-card';
 
 import './category.scss';
 
 class Category extends Component {
-
-  state = {
-    data: [],
-    cat: {},
-  }
-
-  service = new Service();
 
   componentDidMount() {
     if (this.props.categoryId !== this.props.itemId) {
@@ -35,19 +27,24 @@ class Category extends Component {
       return item.virtuemart_category_id === cat_id ? item : false;
     }
 
-    const { categories, products, loading, error, itemId  } = this.props;
+    const { categories, products, loading, error, itemId = 0, history  } = this.props;
     const productCardsReq = products.map(item => {
       return (
-        <ProductCard data={ item } key={ item.virtuemart_product_id } />
+        <ProductCard
+        onItemSelected={ (id) => {
+          history.push(`/product/${id}`)
+        }}
+        data={ item }
+        key={ item.virtuemart_product_id }  />
         )
     });
 
-    const { category_name } = categories.find(item => filterProducts(item, itemId));
+    const { category_name, category_parent_id } = categories.find(item => filterProducts(item, itemId));
 
     return (
       <div className="category">
           <div className="breadcrumbs">
-            <Link to="/" className="back-link">Назад</Link>
+            <Link to={`/${category_parent_id}`} className="back-link">Назад</Link>
             <div className="breadcrumbs__link">{ category_name }</div>
           </div>
 

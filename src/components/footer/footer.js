@@ -3,7 +3,7 @@ import './footer.scss';
 const Footer = () => {
     return (
         <footer className="footer">
-            <div className="page-content d-flex flex-wrap">
+            <div className="container d-flex flex-wrap">
                 <div className="footer__col">
                     <div className="title">
                         Техподдержка:

@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/sab-market/static/css/main.251f509d.chunk.css",
-    "main.js": "/sab-market/static/js/main.3e3e7248.chunk.js",
-    "main.js.map": "/sab-market/static/js/main.3e3e7248.chunk.js.map",
+    "main.css": "/sab-market/static/css/main.a455a293.chunk.css",
+    "main.js": "/sab-market/static/js/main.bfeab675.chunk.js",
+    "main.js.map": "/sab-market/static/js/main.bfeab675.chunk.js.map",
     "runtime-main.js": "/sab-market/static/js/runtime-main.85557e07.js",
     "runtime-main.js.map": "/sab-market/static/js/runtime-main.85557e07.js.map",
-    "static/js/2.54b6b118.chunk.js": "/sab-market/static/js/2.54b6b118.chunk.js",
-    "static/js/2.54b6b118.chunk.js.map": "/sab-market/static/js/2.54b6b118.chunk.js.map",
+    "static/js/2.63879fe7.chunk.js": "/sab-market/static/js/2.63879fe7.chunk.js",
+    "static/js/2.63879fe7.chunk.js.map": "/sab-market/static/js/2.63879fe7.chunk.js.map",
     "index.html": "/sab-market/index.html",
-    "static/css/main.251f509d.chunk.css.map": "/sab-market/static/css/main.251f509d.chunk.css.map",
-    "static/js/2.54b6b118.chunk.js.LICENSE.txt": "/sab-market/static/js/2.54b6b118.chunk.js.LICENSE.txt",
+    "static/css/main.a455a293.chunk.css.map": "/sab-market/static/css/main.a455a293.chunk.css.map",
+    "static/js/2.63879fe7.chunk.js.LICENSE.txt": "/sab-market/static/js/2.63879fe7.chunk.js.LICENSE.txt",
     "static/media/app.scss": "/sab-market/static/media/PTSans-Regular.ac2960c5.woff2",
     "static/media/product-card.scss": "/sab-market/static/media/cart-icon.387f02ff.svg",
+    "static/media/cart-icon.4a186ad5.svg": "/sab-market/static/media/cart-icon.4a186ad5.svg",
+    "static/media/product-details.scss": "/sab-market/static/media/work_time.ec2b4fd1.svg",
     "static/media/main-category-icon--po.12efb737.svg": "/sab-market/static/media/main-category-icon--po.12efb737.svg",
     "static/media/main-category-icon--pos.01b79082.svg": "/sab-market/static/media/main-category-icon--pos.01b79082.svg",
     "static/media/main-category-icon--services.a8c18364.svg": "/sab-market/static/media/main-category-icon--services.a8c18364.svg",
@@ -20,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.85557e07.js",
-    "static/js/2.54b6b118.chunk.js",
-    "static/css/main.251f509d.chunk.css",
-    "static/js/main.3e3e7248.chunk.js"
+    "static/js/2.63879fe7.chunk.js",
+    "static/css/main.a455a293.chunk.css",
+    "static/js/main.bfeab675.chunk.js"
   ]
 }

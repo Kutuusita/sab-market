@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -26,17 +26,39 @@ class Catalog extends Component {
 
   render() {
 
-    const { categories, loading, error, history } = this.props;
+    const { categories, loading, error, history, itemId = 0 } = this.props;
+
+    let categoryTitle = '';
+
+    switch(itemId) {
+      case '2':
+        categoryTitle = 'Работа с 54-ФЗ';
+        break;
+      case '187':
+        categoryTitle = 'САБ.Услуги';
+        break;
+      case '3':
+        categoryTitle = 'POS-Оборудование';
+        break;
+      case '40':
+        categoryTitle = 'ПО для бизнеса';
+        break;
+      default:
+    }
+
     const categoryCards = categories.map(item => {
-      const { virtuemart_category_id: catId } = item;
-      return (
-        <CategoryCard
-            onItemSelected={ (catId) => {
-              history.push(`/category/${catId}`)
-            }}
-            data={ item }
-            key={ catId }  />
-      )
+      const { virtuemart_category_id: catId, category_parent_id } = item;
+      if (category_parent_id === itemId || itemId === 0) {
+        return (
+          <CategoryCard
+              onItemSelected={ (catId) => {
+                history.push(`/category/${catId}`)
+              }}
+              data={ item }
+              key={ catId }  />
+        )
+      }
+      return null;
     });
 
     if (error) {
@@ -48,23 +70,20 @@ class Catalog extends Component {
       return (
           <Spinner />
         )
-      };
+    };
 
 
-      return (
-        <div className="catalog">
+    return (
+      <div className="catalog">
         <div className="categories-section">
-          <div className="section-title">Работа с 54-ФЗ</div>
+          <div className="section-title">{categoryTitle}</div>
           <div className="category-card-list d-flex flex-wrap">
             {categoryCards}
           </div>
         </div>
-        <div className="categories-section">
-          <div className="section-title">POS-Оборудование</div>
-        </div>
       </div>
     )
-  }
+}
 }
 
 const mapStateToProps = ({categoryList: {categories, loading, error}}) => {

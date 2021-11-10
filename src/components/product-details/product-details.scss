@@ -1,0 +1,132 @@
+.product {
+  &-wrap {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 50px 30px;
+    margin-bottom: 100px;
+    display: flex;
+  }
+  &__image {
+    width: 525px;
+    max-width: 525px;
+    flex: 1 0 auto;
+    height: 525px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__price {
+    margin-bottom: 40px;
+    &--base {
+        font-size: 60px;
+        font-weight: bold;
+        font-family: "Gilroy", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+        .symbol {
+          font-size: 40px;
+          color: #C4C4C4;
+        }
+    }
+
+    &--sale,
+    &--sab {
+        width: max-content;
+        &:before {
+            content: '';
+            border: 1px solid #C4C4C4;
+            width: 60%;
+            display: block;
+            border-radius: 3px;
+            margin-bottom: 5px;
+        }
+
+        .price {
+            font-size: 20px;
+            color: #FF731D;
+            font-weight: bold;
+        }
+    }
+
+    &--sale {
+        .price {
+            color: #c4c4c4;
+            text-decoration: line-through;
+        }
+    }
+  }
+
+  &-s-desc {
+    max-width: 525px;
+  }
+
+  &__btn {
+    margin-top: 55px;
+
+    &.added {
+      background: linear-gradient(90deg, #51AF63 23.44%, #96E7A5 100%);
+    }
+  }
+
+  &__feutures {
+    padding: 0;
+    list-style: none;
+    margin-top: 40px;
+    font-size: 16px;
+    li {
+      padding-top: 1px;
+      padding-bottom: 5px;
+      margin: 20px 0;
+      background-repeat: no-repeat;
+      background-position: left top;
+      padding-left: 36px;
+      background-size: 26px 20px;
+
+      &.work_time {
+        background-image: url(./work_time.svg);
+      }
+      &.region {
+        background-image: url(./map-point-orange.svg);
+      }
+      &.delivery {
+        background-image: url(./delivery.svg);
+      }
+      &.any_tasks {
+        background-image: url(./tasks.svg);
+      }
+    }
+  }
+}
+
+.btn {
+  background: linear-gradient(90deg, #FF731D 23.44%, #FFAB77 100%);
+  border-radius: 12px;
+  font-size: 30px;
+  color: #FFFFFF;
+  padding: 15px 40px;
+  border: none;
+  cursor: pointer;
+}
+
+.product-specifications {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 50px 30px;
+}
+.specifications-title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  td {
+    border-bottom: 1px solid #c4c4c4;
+    padding: 10px 5px;
+  }
+}

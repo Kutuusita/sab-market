@@ -5,12 +5,25 @@
     overflow: hidden;
     padding: 40px 30px;
     position: relative;
-    min-height: 543px;
+    min-height: 476px;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+    text-decoration: none;
 
     &__image {
         text-align: center;
         margin-bottom: 20px;
+        height: 250px;
+        width: 250px;
+        text-align: center;
+        margin: 0px auto 20px;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
     }
 
     &__name {
@@ -20,13 +33,15 @@
     }
 
     &__price {
+        margin-top: auto;
         &--base {
             font-size: 35px;
             font-weight: bold;
             font-family: "Gilroy", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
         }
 
-        &--sale {
+        &--sale,
+        &--sab {
             width: max-content;
             &:before {
                 content: '';
@@ -42,7 +57,13 @@
                 color: #FF731D;
                 font-weight: bold;
             }
+        }
 
+        &--sale {
+            .price {
+                color: #c4c4c4;
+                text-decoration: line-through;
+            }
         }
     }
 }
@@ -62,8 +83,10 @@
     font-size: 0;
     cursor: pointer;
 
+    &.added,
     &:hover {
         background-color: #51AF63;
         background-image: url('./cart-icon-added.svg');
     }
+
 }

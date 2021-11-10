@@ -9,9 +9,11 @@ import { StoreServiceProvider } from './components/store-context';
 import ErrorBoundry from './components/error-boundry';
 import Catalog from "./components/catalog";
 import Category from './components/category';
+import ProductDetails from './components/product-details';
 import Footer from './components/footer';
 import Navigation from './components/navigation';
 import './app.scss';
+import MiniCart from './components/mini-cart';
 
 
 
@@ -23,7 +25,14 @@ const App = () => {
     <Provider store={store}>
       <ErrorBoundry>
         <StoreServiceProvider value={storeService} >
-          <div className="page-content">
+          <div className="container page-content">
+            <button
+            onClick={
+              ()=>{
+                window.localStorage.removeItem('app_state')
+              }
+            }>Clean localStorage</button>
+            <MiniCart />
             <Router>
               <Navigation />
               <Route path="/category/:id" render={
@@ -32,7 +41,37 @@ const App = () => {
                   return <Category itemId={ id } />
                 }
               } />
-              <Route path="/" component={ Catalog } exact />
+              <Route path="/" render={
+                () => {
+                  return (
+                    <>
+                    <Catalog itemId='2' />
+                    <Catalog itemId='3' />
+                    </>
+                  )
+                }
+              } exact />
+              <Route path="/:id" exact render={
+                ( { match } ) => {
+                  const { id } = match.params;
+                  if (id === '3' || id === '2' ){
+                    return (
+                      <>
+                      <Catalog itemId='2' />
+                      <Catalog itemId='3' />
+                      </>
+                    )
+                  } else {
+                    return <Catalog itemId={ id } />
+                  }
+                }
+              } />
+              <Route path="/product/:id" render={
+                ( { match } ) => {
+                  const { id } = match.params;
+                    return <ProductDetails itemId={ id } />
+                }
+              } />
             </Router>
           </div>
         </StoreServiceProvider>
