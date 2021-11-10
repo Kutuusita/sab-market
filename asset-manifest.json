@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sab-market/static/css/main.a455a293.chunk.css",
-    "main.js": "/sab-market/static/js/main.bfeab675.chunk.js",
-    "main.js.map": "/sab-market/static/js/main.bfeab675.chunk.js.map",
+    "main.js": "/sab-market/static/js/main.b8779f87.chunk.js",
+    "main.js.map": "/sab-market/static/js/main.b8779f87.chunk.js.map",
     "runtime-main.js": "/sab-market/static/js/runtime-main.85557e07.js",
     "runtime-main.js.map": "/sab-market/static/js/runtime-main.85557e07.js.map",
     "static/js/2.63879fe7.chunk.js": "/sab-market/static/js/2.63879fe7.chunk.js",
@@ -24,6 +24,6 @@
     "static/js/runtime-main.85557e07.js",
     "static/js/2.63879fe7.chunk.js",
     "static/css/main.a455a293.chunk.css",
-    "static/js/main.bfeab675.chunk.js"
+    "static/js/main.b8779f87.chunk.js"
   ]
 }
